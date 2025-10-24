@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaio Bezerra - Contato</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            color: azure;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000000 0%, #000000 100%);
+            background-attachment: fixed;
+            transition: background 0.5s ease;
+        }
+
+        /* ===== Header ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #f5f5f5;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #f0e8d9;
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c8d6ff;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        section {
+            text-align: center;
+            padding: 60px 10%;
+            animation: subir 1.2s ease forwards;
+        }
+
+        h1 {
+            color: azure;
+            margin: 0 0 20px 0;
+            font-size: 60px;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
+        }
+
+        @keyframes subir {
+            0% { transform: translateY(60px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ===== Cards de Contato ===== */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            width: 100%;
+            max-width: 700px; /* Centraliza melhor */
+            margin: 0 auto;   /* Garante o alinhamento no centro */
+        }
+
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            width: 90%; /* Deixa os blocos mais centralizados e equilibrados */
+            max-width: 600px;
+            padding: 30px 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            background-color: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card img {
+            width: 65px;
+            height: 65px;
+            border-radius: 10px;
+        }
+
+        .contact-info {
+            text-align: left;
+        }
+
+        .contact-info h3 {
+            margin: 0;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #a8c7ff;
+            font-size: 19px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+        }
+
+        /* ===== Responsividade ===== */
+        @media (max-width: 600px) {
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+                gap: 15px;
+                width: 95%;
+            }
+
+            .contact-card img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .contact-info h3 {
+                font-size: 22px;
+            }
+
+            .contact-info a {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kaio Bezerra</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="landing.html">Sobre mim</a>
+            <a href="projectmy.html">Projetos</a>
+            <a href="certificates.html">Certificados</a>
+            <a href="personal.html">Mais</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Entre em Contato</h1>
+            <p>Conecte-se comigo pelas redes profissionais ou envie uma mensagem direta. Estou aberto a colaborações, projetos e novas ideias.</p>
+
+            <div class="contact-container">
+                <div class="contact-card">
+                    <img src="linkedin image-fotor-bg-remover-2025102020326.png" alt="LinkedIn">
+                    <div class="contact-info">
+                        <h3>Linkedin</h3>
+                        <a href="https://www.linkedin.com/in/seuusuario" target="_blank">@seuusuario</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <img src="whats image-fotor-bg-remover-2025102020246.png" alt="WhatsApp">
+                    <div class="contact-info">
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/5581999999999" target="_blank">+55 (81) 9 9999-9999</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <img src="insta image-fotor-bg-remover-202510202009.png" alt="Instagram">
+                    <div class="contact-info">
+                        <h3>Instagram</h3>
+                        <a href="https://www.instagram.com/seuusuario" target="_blank">@seuusuario</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <img src="gmail image-fotor-bg-remover-202510202022.png" alt="Gmail">
+                    <div class="contact-info">
+                        <h3>Gmail</h3>
+                        <a href="mailto:seuemail@gmail.com">seuemail@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Efeito suave no fundo conforme a rolagem
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const progress = scrollY / maxScroll;
+            const blueIntensity = Math.min(17, Math.floor(progress * 80));
+            document.body.style.background = `linear-gradient(to bottom, #000000 0%, #0011${blueIntensity.toString(16)} 100%)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Kaio Bezerra</title>
+  <meta name="description" content="Portfólio de Kaio Bezerra — desenvolvedor web criativo, apaixonado por tecnologia e design.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== Fundo animado ===== */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      color: #f5f5f5;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(270deg, #000428, #004e92, #0b234f, #000428);
+      background-size: 800% 800%;
+      animation: fundoAnimado 10s ease infinite;
+      transition: opacity 0.8s ease;
+    }
+
+    @keyframes fundoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* ===== Cabeçalho ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
+
+    header:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #5fb3ff;
+    }
+
+    /* ===== Menu Mobile ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 700px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0,0,0,0.85);
+        flex-direction: column;
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        border-radius: 0 0 10px 10px;
+        transition: height 0.3s ease;
+      }
+      nav ul.show {
+        height: 180px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ===== Conteúdo principal ===== */
+    main {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 1;
+      transition: opacity 0.8s ease;
+      margin-top: 60px;
+    }
+
+    section {
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: aparecer 1.2s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Imagem ===== */
+    img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 15px;
+      border: none;
+      box-shadow: none;
+    }
+
+    /* ===== Textos ===== */
+    h1 {
+      font-size: 3rem;
+      margin: 10px 0;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      max-width: 600px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #d6d6d6;
+    }
+
+    /* ===== Botão ===== */
+    .btn-seta {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background-color: #1e3c72;
+      color: white;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      animation: pulsar 2s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .btn-seta:hover {
+      background-color: #3c5fa7;
+      transform: scale(1.15);
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.1rem; padding: 0 15px; }
+      img { width: 160px; }
+      .btn-seta { width: 55px; height: 55px; font-size: 1.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Kaio Bezerra</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html" class="transicao">Início</a></li>
+        <li><a href="projectmy.html" class="transicao">Projetos</a></li>
+        <li><a href="landing.html" class="transicao">Sobre mim</a></li>
+        <li><a href="contact.html" class="transicao">Contato</a></li>
+        <li><a href="certificates.html" class="transicao">Certificados</a></li>
+        <a href="personal.html" class="transicao">Mais</a>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section>
+      <img src="esnupi.png" alt="Foto ou mascote">
+      <h1>Olá!</h1>
+      <h2>Bem-vindo ao meu portfólio!<br>Sou <b>Kaio Bezerra</b> e vou te mostrar um pouco mais sobre mim.</h2>
+      <p><b>Curiosidade:</b> Este portfólio foi programado inteiramente por mim, <b>do zero</b>!</p>
+    </section>
+  </main>
+
+  <script>
+    // ===== Menu mobile =====
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // ===== Transição suave =====
+    const links = document.querySelectorAll(".transicao");
+    const corpo = document.body;
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const destino = link.getAttribute("href");
+        corpo.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaio Bezerra — Página Principal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #0b234f 0%, #000000 80%);
+      color: #f0e8d9;
+      font-family: 'Merriweather', serif;
+      overflow-x: hidden;
+    }
+
+    /* ===== Cabeçalho ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 10;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: #f5f5f5;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #f0e8d9;
+      text-decoration: none;
+      margin-left: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #c8d6ff;
+    }
+
+    /* ===== Estrutura ===== */
+    main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 120px 60px 60px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    section.bloco-texto {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 25px 30px;
+      max-width: 600px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section.bloco-texto:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #fffbe6;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(90deg, #c8d6ff, transparent);
+      transition: width 0.3s ease;
+    }
+
+    section.bloco-texto:hover h1::after {
+      width: 100px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      color: #c8d6ff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 16px;
+      color: #f1ede3;
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+
+    .autor-paragrafo {
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .autor-paragrafo::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #c8d6ff;
+      font-weight: bold;
+    }
+
+    /* ===== Imagem principal ===== */
+    figure {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .foto-grande {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 14px rgba(255,255,255,0.25);
+      transition: all 0.3s ease;
+    }
+
+    .foto-grande:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 22px rgba(255,255,255,0.35);
+    }
+
+    figcaption {
+      font-size: 14px;
+      font-style: italic;
+      margin-top: 8px;
+      color: #ddd9cc;
+    }
+
+    /* ===== Galeria ===== */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .galeria-item {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .galeria-caption {
+      background: rgba(0, 0, 0, 0.7);
+      color: #f0e8d9;
+      padding: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+        padding: 100px 20px;
+      }
+
+      section.bloco-texto {
+        max-width: 95%;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ===== Links e foco ===== */
+    a:focus, button:focus {
+      outline: 2px solid #c8d6ff;
+      outline-offset: 2px;
+    }
+
+    b {
+      color: #c8d6ff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Kaio Bezerra</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="projectmy.html">Projetos</a>
+      <a href="contact.html">Contato</a>
+      <a href="certificates.html">Certificados</a>
+      <a href="personal.html">Mais</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bloco-texto">
+      <h1>Quem eu sou?</h1>
+      <p>
+        Sou <b>Kaio Bezerra</b>, nascido em 29 de novembro de 2007.  
+        Aluno do Sesi Ibura desde 2023, cursando o Ensino Médio e o curso técnico em <b>Desenvolvimento de Sistemas</b>.  
+        Admirador do que é bom, belo e verdadeiro — com fé em Cristo e amor por música, biologia, arte e literatura.
+      </p>
+      <figure>
+        <img src="eu.png" alt="Foto de Kaio Bezerra" class="foto-grande">
+        <figcaption>Me conheça um pouco melhor. Haverá mais fotos, mas antes veja minha formação.</figcaption>
+      </figure>
+    </section>
+
+    <section class="bloco-texto">
+      <h1>Meu Objetivo</h1>
+      <p>
+        Meu propósito como desenvolvedor é criar soluções digitais que unam design, funcionalidade e emoção — 
+        experiências que não apenas funcionem, mas também inspirem quem as utiliza. Acredito que cada linha de 
+        código é uma oportunidade de transformar ideias em algo vivo, útil e esteticamente marcante.
+      </p>
+      <p>
+        Busco constantemente aprimorar minhas habilidades em desenvolvimento web e explorar tecnologias modernas, 
+        com o intuito de desenvolver projetos que desafiem minha criatividade e gerem impacto real.  
+        Meu objetivo é contribuir para um futuro mais conectado, acessível e inteligente através da programação.
+      </p>
+    </section>
+
+    <section class="bloco-texto">
+      <h1>Um pouco de mim</h1>
+      <p>Alguns fragmentos de momentos e coisas que me cercam — um reflexo simples do que me inspira e compõe quem sou.</p>
+      <div class="galeria">
+        <div class="galeria-item">
+          <img src="Foto_kaio_oficina_brennand.jpg" alt="Kaio em ambiente artístico">
+          <div class="galeria-caption">Visita à Oficina Brennand: onde arte e arquitetura se encontram.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="kiki.jpg" alt="Gato sobre o teclado">
+          <div class="galeria-caption">Kiki, minha companheira de estudos e inspiração nos momentos criativos.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="natureza.jpg" alt="Flor branca e natureza">
+          <div class="galeria-caption">A beleza simples de uma flor: lembrete da perfeição na simplicidade.</div>
+        </div>
+        <div class="galeria-item">
+          <img src="desenho_meu.jpg" alt="Desenho autoral de Kaio">
+          <div class="galeria-caption">A arte que chamo de minha e a angústia que move meu belo ser.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloco-texto">
+      <h1>Autores que me inspiram</h1>
+      <p>Alguns escritores que marcaram minha forma de ver o mundo, cada um com sua perspectiva única sobre a condição humana, a fé e a existência.</p>
+      
+      <h2>Franz Kafka</h2>
+      <p class="autor-paragrafo">Kafka explora os labirintos da burocracia e a alienação do indivíduo. Obras como "A Metamorfose" e "O Processo" revelam o absurdo da existência humana diante de sistemas incompreensíveis.</p>
+      
+      <h2>Fiódor Dostoiévski</h2>
+      <p class="autor-paragrafo">Dostoiévski mergulha nas profundezas da alma humana, explorando fé, razão, culpa e redenção. Em "Crime e Castigo" e "Os Irmãos Karamázov", examina a moralidade com intensidade única.</p>
+      
+      <h2>Dante Alighieri</h2>
+      <p class="autor-paragrafo">Em "A Divina Comédia", Dante cria uma jornada épica pelo Inferno, Purgatório e Paraíso — uma reflexão sobre amor, justiça e a busca pela redenção espiritual.</p>
+      
+      <h2>Santo Agostinho</h2>
+      <p class="autor-paragrafo">Em "Confissões", Agostinho narra sua transformação e busca pela verdade divina, tornando-se um marco espiritual que ecoa até hoje.</p>
+    </section>
+  </main>
+</body>
+</html>

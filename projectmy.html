@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaio Bezerra - Personal</title>
+    
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ======= CONFIGURAÇÕES GERAIS ======= */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            color: azure;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #000000 0%, #000000 100%);
+            background-attachment: fixed;
+            transition: background 0.5s ease;
+        }
+
+        /* ===== Barra de Navegação ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #f5f5f5;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #f0e8d9;
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c8d6ff;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 80px; /* Compensa a barra fixa */
+        }
+
+        /* ======= CABEÇALHO PRINCIPAL ======= */
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 60px 10%;
+            animation: subir 2s ease forwards;
+        }
+
+        h1 {
+            color: azure;
+            margin: 0;
+            font-size: 78px;
+        }
+
+        /* ======= ANIMAÇÃO DE SUBIDA ======= */
+        @keyframes subir {
+            0% { transform: translateY(60px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ======= SEÇÕES DE CONTEÚDO ======= */
+        .info-section {
+            width: 80%;
+            max-width: 1200px;
+            padding: 80px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .info-title {
+            font-size: 40px;
+            animation: subir 1s ease forwards;
+            margin-bottom: 10px;
+        }
+
+        .info-text {
+            font-size: 20px;
+            line-height: 1.6;
+            opacity: 0.8;
+            animation: subir 1.2s ease forwards;
+            margin-top: 0;
+        }
+
+        /* ======= BLOCOS DE 3 ======= */
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            animation: subir 1.3s ease forwards;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* ======= SEÇÃO COM IMAGEM AO LADO ======= */
+        .image-text-block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 80px;
+            animation: subir 1.4s ease forwards;
+            margin-bottom: 60px;
+        }
+
+        .image-text-block img {
+            flex-shrink: 0;
+            height: auto;
+            width: 400px;
+            max-width: 45%;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+        }
+
+        .image-text-block div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* ===== Alterna lado da imagem ===== */
+        .image-text-block:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* ======= LINHA DIVISÓRIA ======= */
+        .divisor {
+            width: 90%;
+            margin: 40px auto;
+            border: none;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            animation: subir 1.1s ease forwards;
+        }
+
+        /* ======= RESPONSIVIDADE ======= */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            main {
+                margin-top: 120px;
+            }
+            
+            section {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 5%;
+            }
+            
+            h1 { font-size: 50px; }
+            .info-title { font-size: 30px; }
+            .info-text { font-size: 18px; }
+
+            .image-text-block {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .image-text-block img {
+                width: 90%;
+                max-width: 420px;
+                height: auto;
+            }
+
+            .card-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 36px; }
+            .info-title { font-size: 26px; }
+            .info-text { font-size: 16px; }
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <h1>Kaio Bezerra</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="landing.html">Sobre mim</a>
+            <a href="contact.html">Contato</a>
+            <a href="certificates.html">Certificados</a>
+            <a href="personal.html">Mais</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Conheça alguns dos meus projetos</h1>
+        </section>
+        
+        <hr class="divisor">
+
+        <div class="info-section">
+            <h2 class="info-title">Técnico Desenvolvimento de Sistemas</h2>
+            <p class="info-text">
+                No momento me encontro finalizando um curso técnico de Desenvolvimento de Sistemas (DS) que foi iniciado em 2023 no SESI. Alguns dos meus projetos se remetem à minha competência de desenvolvedor de sistemas, direcionando cada aluno a realizar estudos, desenvolver autonomia e trabalhos para o ramo profissional. Acompanhe abaixo alguns deles:
+            </p>
+
+            <div class="card-container">
+                <div class="card">
+                    <h3>Boss Bridge - Startup</h3>
+                    <p>Uma startup em equipe com foco no desenvolvimento de um aplicativo para investidores e empresas, onde possam ter uma prestação de serviços em nosso sistema. Foco em autonomia e em facilitar conexão, comunicação e transferências de capital entre empresas e seus investidores.</p>
+                </div>
+                <div class="card">
+                    <h3>Code Ware - IA IDE</h3>
+                    <p>Um projeto particular de um sistema de IDE com IA 100% nacional, com o propósito de auxiliar desenvolvedores iniciantes e avançados, oferecendo conforto visual e facilidade de acesso, com baixa taxa de cobrança de uso.</p>
+                </div>
+                <div class="card">
+                    <h3>Sistema Bibliotecário</h3>
+                    <p>Um aplicativo feito em Python para o funcionamento de um sistema de biblioteca/livrarias escolares onde é permitido o registro de livros, fotos de capa, nome de autor, registro de empréstimo, data de devolução e alunos vinculados.</p>
+                </div>
+                <div class="card">
+                    <h3>App Mobile Microvendas</h3>
+                    <p>Um aplicativo de celular que funciona como um registro de produtos e vendas, facilitando o trabalho diário dos pequenos vendedores de lojas e comércio. Banco de dados SQL integrado e fácil registro de contas e login.</p>
+                </div>
+            </div>
+
+            <!-- BLOCO 1 -->
+            <!-- BLOCO 2 -->
+            <div class="image-text-block">
+                <div>
+                    <h2 class="info-title">Boss Bridge</h2>
+                    <p class="info-text">
+                        Uma startup feita em equipe e iniciada como um projeto do meu curso técnico em DS no SESI Ibura. Temos o propósito de oferecer prestação de serviços a investidores e empresas, funcionando como uma ponte entre eles, facilitando o trabalho e a conexão entre empresa e empreendedor.
+                    </p>
+                </div>
+                <img src="C:\Meus projetos\routes\Captura de tela 2025-10-17 184532.png" alt="Boss Bridge">
+            </div>
+
+            <!-- BLOCO 3 -->
+            <div class="image-text-block">
+                <div>
+                    <h2 class="info-title">Code Ware</h2>
+                    <p class="info-text">
+                        Uma IDE para programação ainda em desenvolvimento. A ideia é ser um sistema que funcione com uma IA para auxiliar na manutenção e geração de códigos.
+                        Totalmente brasileiro e com design responsivo, garantindo conforto visual para os desenvolvedores.
+                    </p>
+                </div>
+                <img src="C:\Meus projetos\routes\Captura de tela 2025-10-17 183953.png" alt="Code Ware">
+            </div>
+
+            <!-- BLOCO 4 -->
+            <div class="image-text-block">
+                <div>
+                    <h2 class="info-title">App Biblioteca</h2>
+                    <p class="info-text">
+                        Um aplicativo com banco de dados integrado que funciona como um registro de livros e empréstimos para alunos em uma instituição acadêmica.
+                        Interface simples e eficiente para administração de bibliotecas escolares.
+                    </p>
+                </div>
+                <img src="C:\Meus projetos\routes\Captura de tela 2025-10-17 140459.png" alt="App Biblioteca">
+            </div>
+
+            <!-- BLOCO 5 -->
+            <div class="image-text-block">
+                <div>
+                    <h2 class="info-title">App Vendas</h2>
+                    <p class="info-text">
+                        Aplicativo mobile para pequenos comerciantes que desejam utilizar um sistema simples e funcional. Permite registro de produtos, vendas, preços e cálculo automático de lucros, com armazenamento por data e hora.
+                    </p>
+                </div>
+                <img src="C:\Meus projetos\routes\Captura de tela 2025-10-17 144911.png"alt="App Vendas">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fundo dinâmico
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const progress = scrollY / maxScroll;
+            const blueIntensity = Math.min(17, Math.floor(progress * 80));
+            document.body.style.background = `linear-gradient(to bottom, #000000 0%, #0011${blueIntensity.toString(16)} 100%)`;
+        });
+    </script>
+</body>
+</html>

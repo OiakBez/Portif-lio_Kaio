@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaio Bezerra - Certificados</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(270deg, #000000, #0b234f, #000000, #000000);
+            background-size: 800% 800%;
+            animation: fundo 10s ease forwards;
+            color: #f0e8d9;
+            font-family: 'Merriweather', serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @keyframes fundo {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== Barra de Navegação ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #f5f5f5;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #f0e8d9;
+            text-decoration: none;
+            margin-left: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #c8d6ff;
+        }
+
+        /* ===== Estrutura Principal ===== */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 120px 40px 60px;
+            gap: 30px;
+        }
+
+        .titulo-principal {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fffbe6;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: subir 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .bloco-texto {
+            background-color: rgba(0, 0, 0, 0.35);
+            border: 1.5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 800px;
+            width: 100%;
+            animation: subir 1s ease forwards;
+            opacity: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bloco-texto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .bloco-texto h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fffbe6;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .bloco-texto p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #f1ede3;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .certificado-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .foto-grande {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-grande:hover {
+            transform: scale(1.02);
+        }
+
+        figcaption {
+            font-size: 14px;
+            font-style: italic;
+            color: #ddd9cc;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        /* ===== Botões de Navegação ===== */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        .btn-seta {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(11, 35, 79, 0.7);
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-seta:hover {
+            background: rgba(11, 35, 79, 0.9);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(200, 214, 255, 0.4);
+        }
+
+        /* ===== Animações ===== */
+        @keyframes subir {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Atrasar animações para criar efeito cascata */
+        .bloco-texto:nth-child(2) { animation-delay: 0.3s; }
+        .bloco-texto:nth-child(3) { animation-delay: 0.5s; }
+        .bloco-texto:nth-child(4) { animation-delay: 0.7s; }
+        .bloco-texto:nth-child(5) { animation-delay: 0.9s; }
+        .btn-container { animation: subir 1s ease 1.1s forwards; opacity: 0; }
+
+        /* ===== Responsividade ===== */
+        @media (max-width: 900px) {
+            main {
+                padding: 100px 20px 40px;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                padding: 15px 20px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            .titulo-principal {
+                font-size: 32px;
+            }
+            
+            .bloco-texto {
+                padding: 20px;
+            }
+            
+            .bloco-texto h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .titulo-principal {
+                font-size: 28px;
+            }
+            
+            .bloco-texto h1 {
+                font-size: 22px;
+            }
+            
+            .bloco-texto p {
+                font-size: 15px;
+            }
+            
+            .btn-container {
+                gap: 20px;
+            }
+            
+            .btn-seta {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* ===== Indicador de Progresso ===== */
+        .progresso-certificados {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .progresso-texto {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            color: #c8d6ff;
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <h1>Kaio Bezerra</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="landing.html">Sobre mim</a>
+            <a href="projectmy.html">Projetos</a>
+            <a href="contact.html">Contato</a>
+            <a href="personal.html">Mais</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="titulo-principal">Certificados e Conquistas</h1>
+        
+        <div class="progresso-certificados">
+            <p class="progresso-texto">🎓 4 certificados conquistados | 📚 Aprendizado contínuo</p>
+        </div>
+
+        <section class="bloco-texto">
+            <h1>SQL Simplilearn | SkillUP</h1>
+            <p>
+                Certificado de curso online sobre manipulação de dados SQL e análise de banco de dados. 
+                Este curso abrangeu desde os fundamentos da linguagem SQL até consultas avançadas, 
+                incluindo junções, subconsultas e otimização de performance.
+            </p>
+            <div class="certificado-container">
+                <img src="Captura de tela 2025-10-06 113548.png" alt="Certificado SQL Simplilearn" class="foto-grande">
+                <figcaption>Certificação concebida em 10/09/2025</figcaption>
+            </div>
+        </section>
+
+        <section class="bloco-texto">
+            <h1>Inteligência Artificial - IA para Todos</h1>
+            <p>
+                Curso abrangente sobre o manuseio com ferramentas de IA, tipos de inteligência artificial 
+                e seu funcionamento. Aprendi a utilizar IA em contextos profissionais e a operar diferentes 
+                ferramentas de machine learning e processamento de linguagem natural.
+            </p>
+            <div class="certificado-container">
+                <img src="Captura de tela 2025-10-06 113625.png" alt="Certificado IA para Todos" class="foto-grande">
+                <figcaption>Certificação concebida em 30/08/2025</figcaption>
+            </div>
+        </section>
+
+        <section class="bloco-texto">
+            <h1>Python - Fundação Bradesco</h1>
+            <p>
+                Curso da Fundação Bradesco sobre a linguagem de programação Python e suas funcionalidades. 
+                Explorei desde a sintaxe básica até conceitos avançados como orientação a objetos, 
+                manipulação de arquivos e desenvolvimento de aplicações práticas.
+            </p>
+            <div class="certificado-container">
+                <img src="Captura de tela 2025-10-06 113844.png" alt="Certificado Python" class="foto-grande">
+                <figcaption>Certificação concebida em 11/09/2025</figcaption>
+            </div>
+        </section>
+
+        <section class="bloco-texto">
+            <h1>POO - Fundação Bradesco</h1>
+            <p>
+                Curso especializado em Programação Orientada a Objetos (POO) pela Fundação Bradesco. 
+                Aprendi os pilares fundamentais da POO - encapsulamento, herança, polimorfismo e abstração - 
+                e como aplicá-los para criar código mais organizado, reutilizável e de fácil manutenção.
+            </p>
+            <div class="certificado-container">
+                <img src="Captura de tela 2025-10-06 113917.png" alt="Certificado POO" class="foto-grande">
+                <figcaption>Certificação concebida em 11/09/2025</figcaption>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
